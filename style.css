@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+    --hue: 240;
+    --primary-color: hsl(195, 91%, 25%);
+    --white-color: hsl(0, 0%, 100%);
+    --input-bg-color: hsla(0, 0%, 100%, 0.2);
+    --title-color: hsl(var(--hue), 6%, 13%);
+    --text-color: hsl(var(--hue), 5%, 7%);
+}
+
+html,
+body,
+input {
+    font-family: 'Mulish', sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: var(--white-color);
+}
+
+.container {
+    padding: 1.2rem 2.8rem;
+}
+
+header {
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 2.6rem;
+    height: 72px;
+}
+
+header form {
+    flex: 1;
+}
+
+.input-wrapper label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 1.2rem;
+    background-color: var(--input-bg-color);
+    border: 0;
+    border-radius: .4rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--white-color);
+}
+
+.input-wrapper input::placeholder {
+    color: var(--white-color);
+}
+
+.input-wrapper input:focus {
+    outline: 0;
+}
+
+.avatar {
+    width: 4.2rem;
+    height: 4.2rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.banner {
+    width: 100%;
+    object-fit: cover;
+}
+
+.article {
+    margin-bottom: 3.4;
+}
+
+h1 {
+    margin-top: 3.4rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--title-color);
+}
+
+.icons {
+    display: flex;
+    gap: 1.2rem;
+    margin: .8rem 0 3.1rem 0;
+}
+
+.content p {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.related {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--title-color);
+}
+
+figure {
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+}
+
+figure img {
+    width: 151px;
+    height: 84px;
+    object-fit: cover;
+}
+
+.details h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--title-color);
+}
+
+.details p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3.9rem;
+}
+
+footer p {
+    color: var(--white-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+@media (min-width: 1440px) {
+
+    .container {
+        padding: 0 10rem;
+    }
+
+    .banner {
+        padding: 4.4rem 10rem 0;
+        border-radius: .5rem;
+        overflow: hidden;
+    }
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .related,
+    figure {
+        margin: 3.2rem 0;
+    }
+
+    main {
+        display: grid;
+        grid-template-areas:
+            "banner banner aside"
+            "main main aside"
+            "main main aside";
+    }
+
+    .article,
+    .banner {
+        grid-area: main;
+    }
+
+    .related {
+        grid-area: aside;
+    }
+}
